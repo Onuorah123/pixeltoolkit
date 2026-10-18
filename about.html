@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Learn about PixelToolkit, a free online image resizer designed to make image editing simple and accessible.">
+
+    <title>About Us | PixelToolkit</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span class="logo-text">PixelToolkit<span class="logo-dot">.</span></span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <p class="hero-label">GET TO KNOW US</p>
+
+        <h1>
+            About <span class="gradient-text">PixelToolkit</span>
+        </h1>
+
+        <div class="resizer-card">
+            <h2>Making image editing simple</h2>
+
+            <p>
+                PixelToolkit is a free online image resizer designed
+                to help people adjust image dimensions quickly and easily.
+            </p>
+
+            <p>
+                Whether you are preparing pictures for a website,
+                social media, schoolwork, or a personal project,
+                our goal is to make everyday image editing easier.
+            </p>
+
+            <h2>What can you do here?</h2>
+
+            <p>
+                You can upload an image, change its width and height,
+                choose a supported output format, adjust image quality
+                where available, and download the result.
+            </p>
+
+            <h2>Our approach</h2>
+
+            <p>
+                We aim to provide a straightforward experience without
+                requiring you to install desktop software.
+                Image processing is performed in your browser by
+                our current image resizing tool.
+            </p>
+
+            <p>
+                We will continue improving the website and adding
+                useful tools as the project develops.
+            </p>
+
+            <a href="index.html">Try the image resizer</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="currentYear"></span> PixelToolkit. All rights reserved.</p>
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

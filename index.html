@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PixelToolkit | Free Online Image Resizer</title>
+
+    <meta
+        name="description"
+        content="Resize images online for free with PixelToolkit. Adjust dimensions, maintain aspect ratio, and export images as PNG, JPEG, or WebP."
+    >
+
+    <meta name="theme-color" content="#0b1020">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo" aria-label="PixelToolkit home">
+            <span class="logo-icon">P</span>
+            <span class="logo-text">PixelToolkit<span class="logo-dot">.</span></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="#resizer" class="nav-button">Image Resizer</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <span class="eyebrow">FREE ONLINE IMAGE TOOL</span>
+
+            <h1>Resize images.<br><span>Keep your quality.</span></h1>
+
+            <p>
+                Resize your images in seconds. Choose your dimensions,
+                select a format, and download your result — right in your browser.
+            </p>
+
+            <a href="#resizer" class="primary-button">Start Resizing
+                <span aria-hidden="true">→</span>
+            </a>
+
+            <div class="hero-features">
+                <span>✓ Free to use</span>
+                <span>✓ No account required</span>
+                <span>✓ Images stay in your browser</span>
+            </div>
+        </section>
+
+        <section class="resizer-section" id="resizer">
+            <div class="section-heading">
+                <span class="eyebrow">IMAGE EDITOR</span>
+                <h2>Resize your image</h2>
+                <p>Upload an image to get started.</p>
+            </div>
+
+            <div class="resizer-card">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon" aria-hidden="true">↑</div>
+
+                    <h3>Choose an image</h3>
+
+                    <p>Click below to select an image from your device.</p>
+
+                    <label for="imageInput" class="upload-button">
+                        Browse Images
+                    </label>
+
+                    <input
+                        type="file"
+                        id="imageInput"
+                        accept="image/*"
+                    >
+
+                    <p class="upload-note">Your image is processed locally in your browser.</p>
+                </div>
+
+                <div class="editor" id="editor" hidden>
+                    <div class="preview-panel">
+                        <h3>Image preview</h3>
+
+                        <div class="preview-frame">
+                            <img
+                                id="previewImage"
+                                alt="Preview of the selected image"
+                            >
+                        </div>
+
+                        <p class="preview-note">
+                            The preview updates after resizing.
+                        </p>
+                    </div>
+
+                    <div class="settings-panel">
+                        <h3>Resize settings</h3>
+
+                        <div class="dimensions">
+                            <div class="field">
+                                <label for="widthInput">Width (px)</label>
+                                <input
+                                    type="number"
+                                    id="widthInput"
+                                    min="1"
+                                    max="10000"
+                                    step="1"
+                                    inputmode="numeric"
+                                >
+                            </div>
+
+                            <div class="dimension-separator" aria-hidden="true">×</div>
+
+                            <div class="field">
+                                <label for="heightInput">Height (px)</label>
+                                <input
+                                    type="number"
+                                    id="heightInput"
+                                    min="1"
+                                    max="10000"
+                                    step="1"
+                                    inputmode="numeric"
+                                >
+                            </div>
+                        </div>
+
+                        <label class="checkbox-row" for="ratioInput">
+                            <input type="checkbox" id="ratioInput" checked>
+                            <span>Maintain aspect ratio</span>
+                        </label>
+
+                        <div class="field format-field">
+                            <label for="formatInput">Output format</label>
+                            <select id="formatInput">
+                                <option value="image/png">PNG</option>
+                                <option value="image/jpeg">JPEG</option>
+                                <option value="image/webp">WebP</option>
+                            </select>
+                        </div>
+
+                        <div class="field quality-group" id="qualityGroup" hidden>
+                            <div class="quality-heading">
+                                <label for="qualityInput">Image quality</label>
+                                <span id="qualityValue">85%</span>
+                            </div>
+
+                            <input
+                                type="range"
+                                id="qualityInput"
+                                min="10"
+                                max="100"
+                                value="85"
+                                step="5"
+                            >
+
+                            <p class="field-hint">
+                                Higher quality usually means a larger file.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="resizeButton"
+                            class="primary-button resize-button"
+                        >
+                            Resize Image
+                        </button>
+
+                        <button
+                            type="button"
+                            id="downloadButton"
+                            class="download-button"
+                            disabled
+                            hidden
+                        >
+                            Download Resized Image
+                        </button>
+
+                        <p
+                            class="status-message"
+                            id="statusMessage"
+                            role="status"
+                            aria-live="polite"
+                        ></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="section-heading">
+                <span class="eyebrow">WHY PIXELTOOLKIT?</span>
+                <h2>Simple tools, less hassle</h2>
+                <p>Get your image ready without complicated software.</p>
+            </div>
+
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">⚡</div>
+                    <h3>Quick and simple</h3>
+                    <p>Adjust image dimensions in a few easy steps.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">⌁</div>
+                    <h3>Control your output</h3>
+                    <p>Choose PNG, JPEG, or WebP and adjust supported quality settings.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">◇</div>
+                    <h3>Browser-based</h3>
+                    <p>Your selected image is processed on your device rather than uploaded to our server.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="how-section">
+            <div class="section-heading">
+                <span class="eyebrow">HOW IT WORKS</span>
+                <h2>Three simple steps</h2>
+            </div>
+
+            <div class="steps-grid">
+                <article class="step-card">
+                    <span class="step-number">01</span>
+                    <h3>Upload</h3>
+                    <p>Select an image from your device.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">02</span>
+                    <h3>Customize</h3>
+                    <p>Set your dimensions and preferred format.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">03</span>
+                    <h3>Download</h3>
+                    <p>Resize your image and save the result.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" class="footer-brand">PixelToolkit<span>.</span></a>
+
+        <p>
+            © <span id="currentYear">2026</span> PixelToolkit.
+            Free online image tools.
+        </p>
+
+        <nav aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </nav>
+    </footer>
+</body>
+</html>
